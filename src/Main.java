@@ -5,13 +5,14 @@ public class Main {
         System.out.println(whoLikesIt("Jacob", "Alex"));
         System.out.println(whoLikesIt("Max", "John", "Mark"));
         System.out.println(whoLikesIt("Alex", "Jacob", "Mark", "Max"));
+        System.out.println(whoLikesIt("Alex", "Jacob", "Mark", "Max", "John"));
     }
 
     public static String whoLikesIt(String... names) {
         String result = "";
-        int length = names.length;
+        int switchChooseCase = Math.min(names.length, 4);
 
-        switch (length) {
+        switch (switchChooseCase) {
             case 1 -> result += names[0] + " likes this";
             case 2 -> result += names[0] + " and " + names[1] + " like this";
             case 3 -> result += names[0] + ", " + names[1] + " and " + names[2] + " like this";
